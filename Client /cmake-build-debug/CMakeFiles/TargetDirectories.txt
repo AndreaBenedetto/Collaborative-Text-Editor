@@ -1,0 +1,4 @@
+/Users/AndreaBen/Documents/POLITO/Collaborative-text-editor/Client /cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/AndreaBen/Documents/POLITO/Collaborative-text-editor/Client /cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/AndreaBen/Documents/POLITO/Collaborative-text-editor/Client /cmake-build-debug/CMakeFiles/Client.dir
+/Users/AndreaBen/Documents/POLITO/Collaborative-text-editor/Client /cmake-build-debug/CMakeFiles/Client_autogen.dir

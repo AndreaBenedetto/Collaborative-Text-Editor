@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Editor</class>
+ <widget class="QMainWindow" name="Editor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Manjari</family>
+    <pointsize>14</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="IconsClient.qrc">
+    <normaloff>:/IconsClient/myicons-pencil.png</normaloff>:/IconsClient/myicons-pencil.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow#Editor{
+	background-color: qlineargradient(spread:reflect, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(0, 133, 255, 255), stop:1 rgba(241, 255, 253, 255));
+}</string>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QFontComboBox" name="comboFont">
+        <property name="font">
+         <font>
+          <family>Manjari</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="currentFont">
+         <font>
+          <family>Manjari</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboSize">
+        <property name="font">
+         <font>
+          <family>Manjari</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+        <property name="maxCount">
+         <number>100</number>
+        </property>
+        <property name="insertPolicy">
+         <enum>QComboBox::InsertAtBottom</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="OnlineUsersButton">
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Manjari</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>Online users...</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="IconsClient.qrc">
+        <normaloff>:/IconsClient/myicons-default-user-image.png</normaloff>:/IconsClient/myicons-default-user-image.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="MyTextEdit" name="textEdit">
+      <property name="font">
+       <font>
+        <family>Manjari</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <family>Manjari</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actionPrint"/>
+    <addaction name="actionPrintPreview"/>
+    <addaction name="actionExportPDF"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="font">
+     <font>
+      <family>Manjari</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+   </widget>
+   <widget class="QMenu" name="menuFormat">
+    <property name="font">
+     <font>
+      <family>Manjari</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>F&amp;ormat</string>
+    </property>
+    <addaction name="actionBold"/>
+    <addaction name="actionItalic"/>
+    <addaction name="actionUnderline"/>
+    <addaction name="separator"/>
+    <addaction name="actionLeft"/>
+    <addaction name="actionCenter"/>
+    <addaction name="actionRight"/>
+    <addaction name="separator"/>
+    <addaction name="actionColor"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuFormat"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarFile">
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>File Actions</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionPrint"/>
+   <addaction name="actionExportPDF"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarEdit">
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>Edit Actions</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCut"/>
+   <addaction name="actionCopy"/>
+   <addaction name="actionPaste"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarFormat">
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>Format Actions</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionBold"/>
+   <addaction name="actionItalic"/>
+   <addaction name="actionUnderline"/>
+   <addaction name="actionLeft"/>
+   <addaction name="actionCenter"/>
+   <addaction name="actionRight"/>
+   <addaction name="actionColor"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarOnlineUsers">
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBarStyle">
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomToolBarArea|Qt::TopToolBarArea</set>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>true</bool>
+   </attribute>
+  </widget>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-new-file.png</normaloff>:/IconsClient/myicons-new-file.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-open-file.png</normaloff>:/IconsClient/myicons-open-file.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open...</string>
+   </property>
+   <property name="toolTip">
+    <string>Open...</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-print.png</normaloff>:/IconsClient/myicons-print.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Print...</string>
+   </property>
+   <property name="toolTip">
+    <string>Print...</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionPrintPreview">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-print.png</normaloff>:/IconsClient/myicons-print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print Preview...</string>
+   </property>
+   <property name="toolTip">
+    <string>Print Preview...</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionExportPDF">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-export-pdf.png</normaloff>:/IconsClient/myicons-export-pdf.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Export PDF...</string>
+   </property>
+   <property name="toolTip">
+    <string>Export PDF...</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-quit.png</normaloff>:/IconsClient/myicons-quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="toolTip">
+    <string>Quit</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-cut.png</normaloff>:/IconsClient/myicons-cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cu&amp;t</string>
+   </property>
+   <property name="toolTip">
+    <string>Cut</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-copy.png</normaloff>:/IconsClient/myicons-copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Copy</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-paste.png</normaloff>:/IconsClient/myicons-paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Paste</string>
+   </property>
+   <property name="toolTip">
+    <string>Paste</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionBold">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-bold.png</normaloff>:/IconsClient/myicons-bold.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Bold</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bold&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionItalic">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-italic.png</normaloff>:/IconsClient/myicons-italic.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Italic</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Italic&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionUnderline">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-underline.png</normaloff>:/IconsClient/myicons-underline.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Underline</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Underline&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionLeft">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-align-left.png</normaloff>:/IconsClient/myicons-align-left.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Left</string>
+   </property>
+   <property name="toolTip">
+    <string>Align Left</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionCenter">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-align-center.png</normaloff>:/IconsClient/myicons-align-center.png</iconset>
+   </property>
+   <property name="text">
+    <string>C&amp;enter</string>
+   </property>
+   <property name="toolTip">
+    <string>Align Center</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionRight">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-align-right.png</normaloff>:/IconsClient/myicons-align-right.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Right</string>
+   </property>
+   <property name="toolTip">
+    <string>Align Right</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionJustify">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-align-justify.png</normaloff>:/IconsClient/myicons-align-justify.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Justify</string>
+   </property>
+   <property name="toolTip">
+    <string>Justify</string>
+   </property>
+  </action>
+  <action name="actionColor">
+   <property name="text">
+    <string>&amp;Color</string>
+   </property>
+   <property name="toolTip">
+    <string>Color</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Manjari</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionOnlineUsers">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-default-user-image.png</normaloff>:/IconsClient/myicons-default-user-image.png</iconset>
+   </property>
+   <property name="text">
+    <string>OnlineUsers</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Online users&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-settings.png</normaloff>:/IconsClient/myicons-settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+   <property name="toolTip">
+    <string>User settings...</string>
+   </property>
+  </action>
+  <action name="actionShare">
+   <property name="icon">
+    <iconset resource="IconsClient.qrc">
+     <normaloff>:/IconsClient/myicons-share.png</normaloff>:/IconsClient/myicons-share.png</iconset>
+   </property>
+   <property name="text">
+    <string>Share</string>
+   </property>
+   <property name="toolTip">
+    <string>Get URI to share this file</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>../../../MyTextEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="IconsClient.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,44 @@
+<RCC>
+  <qresource prefix="/">
+    <file>IconsClient/myicons-share.png</file>
+    <file>IconsClient/myicons-uri.png</file>
+    <file>IconsClient/myicons-add-image.png</file>
+    <file>IconsClient/myicons-align-center.png</file>
+    <file>IconsClient/myicons-align-justify.png</file>
+    <file>IconsClient/myicons-align-left.png</file>
+    <file>IconsClient/myicons-align-right.png</file>
+    <file>IconsClient/myicons-back.png</file>
+    <file>IconsClient/myicons-bold.png</file>
+    <file>IconsClient/myicons-cancel.png</file>
+    <file>IconsClient/myicons-change-image.png</file>
+    <file>IconsClient/myicons-copy.png</file>
+    <file>IconsClient/myicons-cut.png</file>
+    <file>IconsClient/myicons-export-pdf.png</file>
+    <file>IconsClient/myicons-eye-off.png</file>
+    <file>IconsClient/myicons-eye-on.png</file>
+    <file>IconsClient/myicons-help.png</file>
+    <file>IconsClient/myicons-image.png</file>
+    <file>IconsClient/myicons-italic.png</file>
+    <file>IconsClient/myicons-login.png</file>
+    <file>IconsClient/myicons-logout.png</file>
+    <file>IconsClient/myicons-new-file.png</file>
+    <file>IconsClient/myicons-ok.png</file>
+    <file>IconsClient/myicons-open-file.png</file>
+    <file>IconsClient/myicons-password.png</file>
+    <file>IconsClient/myicons-paste.png</file>
+    <file>IconsClient/myicons-pencil.png</file>
+    <file>IconsClient/myicons-print.png</file>
+    <file>IconsClient/myicons-quit.png</file>
+    <file>IconsClient/myicons-redo.png</file>
+    <file>IconsClient/myicons-refresh.png</file>
+    <file>IconsClient/myicons-remove.png</file>
+    <file>IconsClient/myicons-remove-image.png</file>
+    <file>IconsClient/myicons-save.png</file>
+    <file>IconsClient/myicons-save-as.png</file>
+    <file>IconsClient/myicons-settings.png</file>
+    <file>IconsClient/myicons-tick.png</file>
+    <file>IconsClient/myicons-underline.png</file>
+    <file>IconsClient/myicons-undo.png</file>
+    <file>IconsClient/myicons-default-user-image.png</file>
+  </qresource>
+</RCC>
